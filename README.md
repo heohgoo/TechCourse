@@ -2,23 +2,35 @@
 
 2021년 2월 우아한테크세미나
 
-## SpringBoot
+## <p style="text-align: center">SpringBoot</p>
+
+#### 빌드
+
+> - `프로젝트 생성` => **http://start.spring.io (Spring initializer)**
+> 
+>   SpringBoot version : SNAPSHOT(개발 중인 버전), M(MileStone), RC(Release Candidate), **GA(General Available)**
+> - `의존성 관리`
+>
+>   특정한 버전을 명시하지 않더라도 라이브러리를 어떻게 가져오는가, 의존성을 관리하는가
+>   
+>   => gradle 파일이나 pom 파일에 해당 스프링부트에 대한 가장 잘 맞는(호환성이 좋은) 라이브러리를 정의해 두었다.
+>   
+>   스프링부트에서 관리해주는 라이브러리는 오히려 버전을 명시하지 않는 것이 나을 수 있다.(ex) lombok, spring-boot-start-...)
+> - `애플리케이션 패키징 및 실행`
+>
+>   - mvn spring-boot:run, gradle bootRun => `Maven이나 Gradle 플러그인`을 사용해서 실행
+>   - main 클래스 실행 => `IDE 환경`에서 실행, 가장 일반적이다.
+>   - JAR 패키징 & java -jar => 스프링부트 플러그인으로 특수한 형태의 JAR 파일로 패키징하고 실행, `서버에 배포`하는 용도
 
 
-
-> - 프로젝트 생성
-> - 의존성 관리
-> - 애플리케이션 패키징 및 실행
-
-
-** 코딩 **
+#### 코딩
 
 > - 개발 툴 제공
 > - 자동 설정
 > - 외부 설정
 
 
-** 배포 및 관리 **
+#### 배포 및 관리
 
 > - 도커 이미지 생성
 > - Actuator
