@@ -50,7 +50,9 @@
 >   - EnableAutoConfiguration
 >   - @Configuration && @ConditionalOnXxx
 > - 외부 설정(코드에서 값을 외부로 꺼내온다.)
-> - 
+>   - `application.properties`, `application.yaml` => JSON 형식에서 중괄호가 빠진 것(yaml), 환경 변수, java 명령어 아규먼트 키/값 형태로 정의되어 있는 다양한 외부 설정 지원 => @ConfigurationProperties
+>   - 가장 구체적이고`(config 디렉토리 안에 있으면 더욱 구체적이다.)` 가까운 위치`(현재 파일 시스템에 가까울수록, JAR 파일보다는 멀수록)`에 있는 설정의 우선 순위가 높다.
+>   - application.properties 설정 중 한글이 필요한 경우 encoding 설정을 통해 utf-8을 아스키로 변환하면 깨짐 현상을 없앨 수 있다.(자바 스펙 이슈)
 
 
 #### 배포 및 관리
