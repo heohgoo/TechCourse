@@ -29,7 +29,7 @@
 
 > - 개발 툴 제공
 >
->  `Spring-Boot-Devtools`
+>    `Spring-Boot-Devtools`
 >
 >   - 코드를 바꾸고 다시 build하면 자동으로 애플리케이션을 재시작하며 브라우저에도 업데이트해준다.(watcher 매커니즘)
 >
@@ -38,7 +38,19 @@
 >   - 캐싱과 같은 기능 때문에 해당 의존성을 포함하여 패키징하여 배포 시 효율과 성능이 떨어지지 않을까?
 >     괜찮다. JAR 배포 시 개발용인 Devtools 설정을 무시하기 때문에 의존성을 포함해도 된다.   
 > - 자동 설정(Convention over Configuration)
-> - 외부 설정
+>
+>   `애플리케이션에서 설정한 빈 등록`
+>   - @ComponentScan
+>   - @Component, @Service, @Controller, @Repoistory
+>   - @Configuration => Bean 새롭게 정의
+>   - @Bean
+>
+>   `자동 설정으로 제공하는 빈 등록`
+>   - META-INF/spring.factories
+>   - EnableAutoConfiguration
+>   - @Configuration && @ConditionalOnXxx
+> - 외부 설정(코드에서 값을 외부로 꺼내온다.)
+> - 
 
 
 #### 배포 및 관리
