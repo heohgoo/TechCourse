@@ -71,4 +71,8 @@
 > - `Actuator(관리)` => 애플리케이션 `관련 데이터 및 모니터링 정보` 제공
 >   - 웹(JSON)과 JMX 지원(`spirng-boot-starter-actuator`) => "url../actuator" => self-descripted(restful api의 특성)
 >   - management.endpoints.web.exposure.include = *(모든 endpoint를 확인할 수 있다.) => application.properties에 구문 추가
-> - `스프링부트 어드민`
+>   - 여러 엔드포인트 제공
+>     - /beans, /configprops(property 조회), /logger(로그), /heapdump(메모리의 현재 상태), /threaddump(스레드의 현재 상태), .. 
+>     - `런타임 중에도 logger의 level을 바꿀 수 있다. (ex) configuredLevel -mode)`
+> - `스프링부트 어드민(Actuator 기반 UI 오픈소스)` => https://github.com/codecentric/spring-boot-admin
+>   - 애플리케이션 내부의 Actuator 정보를 admin 서버로 보내서 admin 서버에서 모니터링이 가능하게 한다.
