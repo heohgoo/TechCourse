@@ -1,6 +1,6 @@
 # TechCourse
 
-2021년 2월 우아한테크세미나
+2021년 2월 우아한테크세미나 => https://www.youtube.com/watch?v=z0EaPjF3pCQ
 
 ## <p style="text-align: center">SpringBoot</p>
 
@@ -27,7 +27,7 @@
 
 #### 코딩
 
-> - 개발 툴 제공
+> - `개발 툴 제공`
 >
 >    `Spring-Boot-Devtools`
 >
@@ -37,7 +37,7 @@
 >
 >   - 캐싱과 같은 기능 때문에 해당 의존성을 포함하여 패키징하여 배포 시 효율과 성능이 떨어지지 않을까?
 >     괜찮다. JAR 배포 시 개발용인 Devtools 설정을 무시하기 때문에 의존성을 포함해도 된다.   
-> - 자동 설정(Convention over Configuration)
+> - `자동 설정(Convention over Configuration)`
 >
 >   `애플리케이션에서 설정한 빈 등록`
 >   - @ComponentScan
@@ -46,17 +46,29 @@
 >   - @Bean
 >
 >   `자동 설정으로 제공하는 빈 등록`
+>   - 패키지 간 ComponentScan
 >   - META-INF/spring.factories
 >   - EnableAutoConfiguration
 >   - @Configuration && @ConditionalOnXxx
-> - 외부 설정(코드에서 값을 외부로 꺼내온다.)
+> - `외부 설정(코드에서 값을 외부로 꺼내온다.)`
 >   - `application.properties`, `application.yaml` => JSON 형식에서 중괄호가 빠진 것(yaml), 환경 변수, java 명령어 아규먼트 키/값 형태로 정의되어 있는 다양한 외부 설정 지원 => @ConfigurationProperties
->   - 가장 구체적이고`(config 디렉토리 안에 있으면 더욱 구체적이다.)` 가까운 위치`(현재 파일 시스템에 가까울수록, JAR 파일보다는 멀수록)`에 있는 설정의 우선 순위가 높다.
+>   - 가장 구체적이고`(config 디렉토리 안에 있으면 더욱 구체적이다.)` 가까운 위치`(현재 파일 시스템에 가까울수록, JAR 파일보다는 멀수록)`에 있는 설정의 우선 순위가 높다. => properties들중 우선순위가 높은 것이 덮어쓰는 형식이다.
 >   - application.properties 설정 중 한글이 필요한 경우 encoding 설정을 통해 utf-8을 아스키로 변환하면 깨짐 현상을 없앨 수 있다.(자바 스펙 이슈)
 
 
 #### 배포 및 관리
 
-> - 도커 이미지 생성
-> - Actuator
-> - 스프링부트 어드민
+> - `도커 이미지 생성(계층형 이미지 빌드 지원)`
+>   - 도커 정리 => https://github.com/heohgoo/DockerStudy
+>   - 도커 이미지는 다른 이미지를 기반으로 새로운 이미지를 만들 수 있다.
+>   - 계층형 이미지를 만든다면 `기존 계층은 캐시로 재사용`할 수 있어 효율적이다.
+>     메모리가 큰 fat JAR를 매번 빌드하는 대신 기존 계층을 재사용할 수 있도록 한다. 바뀐 계층부터 새롭게 빌드하는 형식이다.
+>   - 스프링부트 이미지 생성(`spring-boot-build-image`)
+>     <br>
+      <br>
+>     ![image](https://github.com/heohgoo/TechCourse/assets/95553132/af5e6f41-1be6-4c7e-a2a3-eff53f1890db)
+>   - 이미지의 계층 구조 확인 => dive {image name} (`docker dive opensource`) => https://github.com/wagoodman/dive
+> - `Actuator(관리)` => 애플리케이션 `관련 데이터 및 모니터링 정보` 제공
+>   - 웹(JSON)과 JMX 지원(`spirng-boot-starter-actuator`) => "url../actuator" => self-descripted(restful api의 특성)
+>   - management.endpoints.web.exposure.include = *(모든 endpoint를 확인할 수 있다.) => application.properties에 구문 추가
+> - `스프링부트 어드민`
